@@ -12,7 +12,14 @@ connectDB();
 
 const app = express();
 const bookingRoutes = require("./routes/bookingRoutes");
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://little-steps-tu7c.vercel.app",
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 
