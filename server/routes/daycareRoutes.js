@@ -9,7 +9,7 @@ const {
   deleteDaycare,
 } = require("../controllers/daycareController");
 
-const protect = require("../middleware/authMiddleware");
+const protect = require("../middleware/authmiddleware");
 
 router.post("/", protect, createDaycare);
 
